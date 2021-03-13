@@ -1,0 +1,12 @@
+.table-wrapper {
+    padding-top: 50px;
+}
+
+.buttons-wrapper {
+    text-align: center;
+    margin: 40px;
+}
+
+table {
+    border: 1px solid #dee2e6;
+}
