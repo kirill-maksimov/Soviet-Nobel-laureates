@@ -16,7 +16,7 @@ function TableContainer() {
   const laureates = useSelector(state => state.laureates);
   const laureatesByPeriod = laureates && laureates
     .filter(laureate => laureate.prizes
-      .map(prize => prize.year > period.start && prize.year < period.end)
+      .map(prize => prize.year >= period.start && prize.year <= period.end)
       .includes(true))
 
   const changePeriod = param => {

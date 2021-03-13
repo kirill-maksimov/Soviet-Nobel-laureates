@@ -7,7 +7,8 @@ import {
 export function* getLaureatsSaga() {
   try {
     const response = yield call(axios.get, 'http://api.nobelprize.org/v1/laureate.json');
-    const result = response.data.laureates.filter(laureate => laureate.bornCountry && laureate.bornCountry.includes('Russia'));
+    const result = response.data.laureates
+      .filter(laureate => laureate.bornCountry && laureate.bornCountry.includes('Russia'));
     yield put({ type: GET_LAUREATS_SUCCESS, result });
   } catch (error) {
     console.error(error);
